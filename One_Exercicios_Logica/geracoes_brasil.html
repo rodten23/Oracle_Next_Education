@@ -1,0 +1,26 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br><br>");
+	}
+
+	function exiba(informacao) {
+		
+		document.write(informacao);
+		pulaLinha();
+	}
+
+
+	var descBrasil = 1500;
+	var idadeParaFilhos = 28;
+	var anoAtual = 2022;
+
+	exiba("Em média, um casal tem filhos quando atinge a idade de 28 anos.");
+
+	exiba("Então, desde o descobrimento do Brasil, nós tivemos " + (Math.round((anoAtual - descBrasil) / idadeParaFilhos)) + " gerações.");
+	
+
+</script>

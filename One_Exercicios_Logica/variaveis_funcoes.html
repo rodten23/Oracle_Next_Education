@@ -1,0 +1,49 @@
+<meta charset="UTF-8">
+
+<script>
+
+
+    // Esta função recebe parêmetros (no caso, o seuTexto, que seria como uma variável que recebe o texto real digitado depois).
+
+    function funExibir(seuTexto) {
+
+        document.write(seuTexto);
+        funPularLinha();
+
+    }
+
+
+    // Já esta função é para executar algo definitivo, então ela não tem parâmetros.
+    // Além disso, o ideal (Boas Práticas) seria declarar a funPularLinha antes da funExibir, já que esta última está invocando ela. Porém mesmo estando fora de ordem, tudo funciona, pois a função só executada de fato no ponto que é chamada no programa e segundo ouvi isso é uma característica de Programação Orientada a Objetos. Outra pessoa me falou "Isso acontece pq funções em JS sempre são "içadas" para o topo do documento, pesquise por "hoisting em JavaScript" se quiser saber mais detalhes a respeito".
+
+    function funPularLinha() {
+
+        alert("Vou pular linhas e exibir próxima frase.");
+        document.write("<br><br>");
+
+    }
+
+
+    var ano = 2022;
+    var varPuloLinha = "<br><br><br><br>";
+
+
+    // Abaixo, método usando função padrão (document.write) e variável(varPuloLinha).
+
+    document.write("Flávio tem " + (ano - 1977) + " anos.");
+
+    document.write(varPuloLinha);
+
+
+    // A partir daqui, usei minha função funExibir que "embutida" tem a minha outra função funPularLiha (que poderia ser usada fora).
+
+    funExibir("Joaquim tem " + (ano - 1996) + " anos.");
+
+    
+
+    ano = 2062;
+
+    funExibir("Barney tem " + (ano - 1976) + " anos.");
+
+
+</script>
