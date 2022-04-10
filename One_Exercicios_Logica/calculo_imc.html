@@ -1,0 +1,71 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br><br>");
+	}
+
+	function exiba(informacao) {
+		
+		document.write(informacao);
+		pulaLinha();
+	}
+
+// Primeiro jeito de fazer as coias.
+	function calculaImc(nome, peso, altura) {
+
+		var imc = Math.round(peso / (altura * altura));
+		exiba("O IMC calculado do " + nome + " é " + imc + ".");
+
+	}
+
+	var pesoRodrigo = 113;
+	var alturaRodrigo = 1.80;
+	calculaImc("Rodrigo", pesoRodrigo, alturaRodrigo);
+
+
+	var pesoAmigo = 68;
+	var alturaAmigo = 1.72;
+	calculaImc("amigo", pesoAmigo, alturaAmigo);
+
+// Agora faremos de outro jeito de fazer as coias.
+
+	function calculaImc2(peso, altura) {
+
+		// var imc = Math.round(peso / (altura * altura));
+
+		// É com o return que devolvemos os valores (cálculos) para variáveis imcRoddrigo e imcAmigo. Sem o return, programa faz tudo, mas não devolve os resultados. Inclusive, podemos usar return com strings ou números exatos (não cálculos), por exemplo.
+
+		// return imc;
+
+		// Agora, uma forma simplificada.
+
+		return Math.round(peso / (altura * altura));
+		
+	}
+
+	var pesoRodrigo = 113;
+	var alturaRodrigo = 1.80;
+	var imcRodrigo = calculaImc2(pesoRodrigo, alturaRodrigo);
+
+	exiba("O IMC calculado é " + imcRodrigo + ".");
+
+
+	var pesoAmigo = 68;
+	var alturaAmigo = 1.72;
+	var imcAmigo = calculaImc2(pesoAmigo, alturaAmigo);
+
+	exiba("O IMC calculado é " + imcAmigo + ".");
+
+	// Também podemos:
+
+	var totalImc = calculaImc2(pesoRodrigo, alturaRodrigo) + calculaImc2(pesoAmigo, alturaAmigo);
+
+	document.write("A soma do IMCs é " + totalImc);
+	document.write("<br>");
+	document.write("A soma do IMCs é " + (calculaImc2(pesoRodrigo, alturaRodrigo) + calculaImc2(pesoAmigo, alturaAmigo)));
+
+
+</script>

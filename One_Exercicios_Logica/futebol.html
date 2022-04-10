@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br><br>");
+	}
+
+	function exiba(informacao) {
+		
+		document.write(informacao);
+		pulaLinha();
+	}
+
+	// Função prompt sempre retorna uma string. Porém, quando na entrada temos números, para multiplicação e divisão, o cálculo funciona. Já para adição e subtração, e também na concatenação, cálculo não funciona.
+
+	var vitorias = parseInt(prompt("Quantas vitórias seu time teve?"));
+	var empates = parseInt(prompt("Agora, digite a quantidade de empates."));
+
+	var pontos = vitorias * 3 + empates;
+
+	exiba("Seu time conquistou " + pontos + " pontos.");
+
+
+	if(pontos > 28) {
+
+		exiba ("Seu time está melhor do que no ano passado.");
+	}
+
+	if(pontos < 28) {
+
+		exiba ("Seu time está pior do que no ano passado.");
+	}
+
+	if(pontos == 28) {
+
+		exiba ("Seu time está igual ao ano passado.");
+	}
+
+	exiba("FIM.");
+
+
+</script>
