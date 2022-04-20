@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br>");
+	}
+
+	function exiba(informacao) {
+		
+		document.write(informacao);
+		pulaLinha();
+	}
+
+	for(var linha = 1; linha <= 3; linha++) {
+
+		for(var coluna = 1; coluna <= 10; coluna++) {
+
+			document.write("*");
+
+		}
+
+		pulaLinha()
+
+	}
+
+	exiba("FIM")
+
+</script>

@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br><br>");
+	}
+
+	function exiba(informacao) {
+		
+		document.write(informacao);
+		pulaLinha();
+	}
+
+	var alvo = parseInt(prompt("Você quer saber a tabuada do número... ?"));
+
+	// Abaixo, método com while.
+
+	var multiplicador = 1;
+
+	while(multiplicador <= 10) {
+
+		exiba(alvo + " x " + multiplicador + " = " + (alvo * multiplicador));
+		multiplicador ++; // Variável++, tecnicamente chama-se pós incremento.
+
+	}
+
+	exiba("Fim do while.")
+	pulaLinha()
+
+	// Agora, segeu método com for. Sendo nos seus 3 parâmetros (separados por ; ): primeiro, a variável de incremento que eu inicializo; em segundo, a condição de repetição; e em terceiro, o incremento (ou decremento) à variável inicializada no primeiro campo do parâmetro.
+
+	for(var multiplicador = 1; multiplicador <= 10; multiplicador ++) {
+
+		exiba(alvo + " x " + multiplicador + " = " + (alvo * multiplicador));
+
+	}
+
+	exiba("Fim do for.")
+
+</script>

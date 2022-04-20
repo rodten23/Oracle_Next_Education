@@ -1,0 +1,37 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o  meu segredo</button>
+
+<script>
+
+	var segredo = Math.round(Math.random() * 10);
+	console.log(segredo);
+
+	var input = document.querySelector("input"); // document.querySelector "captura" a tag informada e, neste caso, guarda na variável input.
+
+	input.focus();
+
+	function verifica() {
+
+		if(input.value == segredo) {
+
+			alert("Parabéns, você ACERTOU!");
+
+		} else {
+
+			alert("Infelizmente, você ERROU!");
+		}
+
+		input.value = "";
+		input.focus();
+
+	}
+
+	var button = document.querySelector("button");
+	//button.onclick = verifica(); // Com () , a função já é chamada imediatamente e dá erro.
+
+	button.onclick = verifica; // Sem () , a função é apenas guardada dentro do button.onclick, esperando o apertar do botão para ser executada. 
+	
+
+</script>

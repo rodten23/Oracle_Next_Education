@@ -1,0 +1,69 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br><br>");
+	}
+
+	function exiba(informacao) {
+		
+		document.write(informacao);
+		pulaLinha();
+	}
+
+	var inicio = 30;
+
+	while(inicio <= 40) {
+
+		if(inicio != 33 && inicio != 37) {
+
+			exiba(inicio);
+			
+		} else {
+
+			exiba("Número inválido.")
+		}
+
+		inicio += 1;
+				
+	}
+
+	exiba("Fim!")
+
+	pulaLinha()
+
+
+	// Abaixo, outra soluçã dada pelo curso.
+
+
+	var contador = 30;
+
+    while(contador <= 40) {
+
+        if( contador == 33 ) {
+
+        contador = contador + 1;
+
+        }
+
+        else if(contador == 37) { 
+
+            contador = contador + 1;
+
+        }
+        else {
+
+        exiba(contador);
+
+        contador = contador + 1; 
+
+        }
+
+	}
+
+	exiba("Fim!")
+
+
+</script>

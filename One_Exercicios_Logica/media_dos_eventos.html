@@ -1,0 +1,36 @@
+<meta charset="UTF-8">
+
+<script>
+
+
+    function pulaLinha() {
+
+        document.write("<br>");
+    }
+
+    function exiba(frase) {
+
+        document.write(frase);
+        pulaLinha();
+    }
+
+    var totalDeEventos = parseInt(prompt("Favor, Informe o total de eventos."));
+
+    var contador = 1;
+
+    var totalGastoComEventos = 0;
+
+    while(contador <= totalDeEventos) {
+
+        var gasto = parseFloat(prompt("Agoro, informe total gasto com evento."));
+
+        totalGastoComEventos = totalGastoComEventos + gasto;
+
+        contador++;
+    }
+
+    var media = totalGastoComEventos / totalDeEventos;
+
+    exiba("A média de gastos entre estes " + totalDeEventos + " eventos é: R$ " + media);
+
+</script>

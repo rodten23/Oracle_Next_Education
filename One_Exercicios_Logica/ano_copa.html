@@ -1,0 +1,30 @@
+<meta charset="UTF-8">
+
+<script>
+
+	function pulaLinha() {
+
+		document.write("<br><br>");
+	}
+
+	function exiba(informacao) {
+		
+		document.write(informacao);
+		pulaLinha();
+	}
+
+	var limite = parseInt(prompt("Favor, digite a data limite para copas."));
+
+	var anoCopa = 1930;
+
+	while(anoCopa <= limite) {
+
+		exiba("Teve copa em " + anoCopa + ".");
+		// Pode ser assim anoCopa = anoCopa + 4; ou a forma de baixo.
+		anoCopa += 4;
+
+	}
+
+	exiba("Fim")
+
+</script>

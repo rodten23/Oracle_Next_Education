@@ -13,18 +13,34 @@
 		pulaLinha();
 	}
 
-	var numeroPensado = Math.round(Math.random()*100);
-	//console.log(numeroPensado);
+	var numeroPensado = Math.round(Math.random()*10);
+	console.log(numeroPensado);
 
-	var chute = parseInt(prompt("Favor, digite um chute!"));
+	var tentativas = 1;
 
-	if(chute == numeroPensado) {
+	while(tentativas <= 3) {
 
-		exiba("Você acertou!");
-	} else {
+		var chute = parseInt(prompt("Favor, digite um chute!"));
 
-		exiba("Infelizmente, você errou. O número pensado foi " + numeroPensado + ".");
+		if(chute == numeroPensado) {
+
+			exiba("Parabéns, você ACERTOU! Realmente o número pensando era " + numeroPensado + ".");
+
+			// break
+
+			tentativas = 4
+
+		} else {
+
+			alert("Infelizmente, você errou. Tente novamente.");
+		}
+
+		tentativas++;
+
+
 	}
+
+	exiba("FIM")
 
 
 </script>
