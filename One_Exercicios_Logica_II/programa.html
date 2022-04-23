@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"> </canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas'); // JavaScript aceita aspas duplas e aspas simples. Mas no HTML só pode aspas duplas.
+    var pincel = tela.getContext('2d');
+    /*
+    Isto é um comentário de bloco em JavaScript.
+    */
+    pincel.fillStyle = 'lightgrey'; //Primeiro devemos definir a cor do preenchimento e depois o seu formato/tamanho.
+    pincel.fillRect(0,0,600,400); // Os 0,0 são os pontos (X e Y) para iniciar preenchimento (fill) e 600,400 são os pontos finais, sendo o limite prático dele o tamanho do canvas que foi definido no HTML.
+
+    pincel.fillStyle = 'green';
+    pincel.fillRect(0,0,200,400);
+
+    pincel.fillStyle = 'red';
+    pincel.fillRect(400,0,200,400);
+
+    pincel.fillStyle = 'yellow';
+    pincel.beginPath();
+    pincel.moveTo(300,200);
+    pincel.lineTo(200,400);
+    pincel.lineTo(400,400);
+    pincel.fill();
+
+    pincel.fillStyle = 'blue';
+    pincel.beginPath();
+    pincel.arc(300,200,50,0,2*3.14);
+    pincel.fill();
+
+    // Esses comandos pertencem a "canvas 2d api".
+
+</script>

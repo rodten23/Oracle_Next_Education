@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<h2>Qual é a fração?</h2>
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    var quadro = document.querySelector('canvas');
+    var pincel = quadro.getContext('2d');
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400);
+
+    function desenhaQuadrado(x, y, lar, alt, cor) {
+
+        var numerador = parseInt(prompt("Favor, digite o numerador da fração:"));
+
+        var denominador = parseInt(prompt("Agora, digite o denominador da fração:"));
+
+        for(var num = 0; num < numerador; num++) {
+            pincel.fillStyle = cor;
+            pincel.fillRect(x, y, lar, alt);
+            x = x + lar;
+        }
+
+        x = x - (lar*numerador);
+
+        for(var den = 0; den < denominador; den++) {
+            pincel.strokeStyle = 'blue';
+            pincel.strokeRect(x, y, lar, alt);
+            x = x + lar;
+        }
+
+        pincel.font = '14px Roboto';
+        pincel.fillStyle = 'grey';
+        pincel.fillText("Está é a fração:  "+numerador+" / "+denominador, 25, 125);
+    }
+
+    desenhaQuadrado(25, 25, 50, 50, 'green');
+
+</script>

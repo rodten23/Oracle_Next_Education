@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"> </canvas>
+
+<script>
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+/*
+    function desenhaQuadrado(xa,ya,xb,yb) {
+        pincel.fillStyle = prompt("Favor, digite uma cor para preencher:");
+        pincel.fillRect(xa,ya,xb,yb);
+        pincel.strokeStyle = prompt("Agora, favor digite a cor de contorno:");
+        pincel.strokeRect(xa,ya,xb,yb);
+    }
+*/
+
+    function desenhaQuadrado(xa,ya,cor) {
+        pincel.fillStyle = cor;
+        pincel.fillRect(xa,ya,50,50);
+        pincel.strokeStyle = 'red';
+        pincel.strokeRect(xa,ya,50,50);
+    }
+/*
+    var x = 0;
+    while(x < 600) {
+
+        desenhaQuadrado(x,0,'yellow');
+        desenhaQuadrado(x,50,'blue');
+        desenhaQuadrado(x,100,'green');
+        x = x + 50;
+    }
+*/
+    for( var x = 0; x < 600; x = x + 50) {
+
+        desenhaQuadrado(x,0,'yellow');
+    }
+
+</script>

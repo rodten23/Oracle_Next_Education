@@ -1,0 +1,82 @@
+<meta charset="UTF-8">
+
+<input/>
+<button>Compare com o  meu segredo</button>
+
+<script>
+
+	function sorteia() {
+		return Math.round(Math.random() * 10);
+	}
+
+	function sorteiraNumeros(quantidade) {
+
+		var segredos = []; // Essas variável segredos não causa problema com a variável segredos que está fora, porque tudo que está dentro da função não tem relação direta com resto do código.
+		contador = 1;
+
+		while(contador <= quantidade) {
+
+			var numeroAleatorio = sorteia();
+			if(numeroAleatorio != 0) {
+
+				var achou = false;
+
+				for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+					if(segredos[posicao] == numeroAleatorio) {
+						achou = true;
+						break;
+					}
+				}
+
+				if(achou == false) {
+					segredos.push(numeroAleatorio);  // Push inseri número da funçao sorteia dentro do array da variável segredos que está dentro da função.
+					contador++
+
+				}
+			}
+		}
+		return segredos;
+	}
+
+	var segredos = sorteiraNumeros(3); // Já que é um array (lista), boa prática é nomear variável no plural.
+	console.log(segredos);
+
+	var input = document.querySelector("input"); // document.querySelector "captura" a tag informada e, neste caso, guarda na variável input.
+
+	input.focus();
+
+	function verifica() {
+		var achou = false;
+
+		for(var posicao = 0; posicao < segredos.length; posicao++) {
+
+			if(input.value == segredos[posicao]) {
+
+				alert("Parabéns, você ACERTOU!");
+				achou = true;
+				break;
+
+			}
+
+		}
+
+		if(achou == false) {
+
+			alert("Infelizmente, você ERROU!");
+
+		}
+
+
+		input.value = "";
+		input.focus();
+
+	}
+
+	var button = document.querySelector("button");
+	//button.onclick = verifica(); // Com () , a função já é chamada imediatamente e dá erro.
+
+	button.onclick = verifica; // Sem () , a função é apenas guardada dentro do button.onclick, esperando o apertar do botão para ser executada.
+
+
+</script>
